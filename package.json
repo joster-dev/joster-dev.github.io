@@ -4,8 +4,9 @@
   "scripts": {
     "ghp-build": "ng build --prod --base-href=https://joster-dev.github.io/",
     "ghp-push": "git add . && git commit --message=\"chore - prod push\" && git push",
-    "ghp-subtree-push": "git subtree push --prefix=dist origin master",
-    "gh-pages": "npm run ghp-build && npm run ghp-push && npm run ghp-subtree-push"
+    "ghp-subtree-push": "git subtree push --prefix=dist origin stage",
+    "gh-pages": "npm run ghp-build && npm run ghp-push && npm run ghp-subtree-push",
+    "manual": "git checkout master && git pull origin stage --allow-unrelated-histories"
   },
   "private": true,
   "dependencies": {
