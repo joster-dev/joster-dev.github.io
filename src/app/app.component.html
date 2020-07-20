@@ -1,1 +1,63 @@
-Profile Site ;)
+<header>
+  <nav>
+
+  </nav>
+</header>
+<section class="hero">
+  <header>
+    <!-- logo: rotates on hover -->
+    <img src="assets/logo.png" />
+    <h1>Jacob Osterhout</h1>
+    <p>Front-end web developer</p>
+  </header>
+</section>
+<main>
+  <h2>
+    Projects
+  </h2>
+  <fc-text
+    [(ngModel)]="searchTerm"
+    name="searchTerm"
+    label="Find a project 🔎"
+    placeholder="Type here to search..."
+  ></fc-text>
+  <br />
+  <nav>
+    <a
+      *ngFor="let card of cards"
+      [href]="card.link"
+      target="_blank"
+    >
+      <header>
+        {{card.title}}
+      </header>
+      <ul>
+        <li *ngFor="let tag of card.tags">
+          {{tag}}
+        </li>
+      </ul>
+    </a>
+  </nav>
+</main>
+<footer>
+  <nav>
+    <a
+      href="https://github.com/joster-dev/"
+      target="_blank"
+    >
+      Github
+    </a>
+    <a
+      href="https://twitter.com/JacobOsterhout/"
+      target="_blank"
+    >
+      Twitter
+    </a>
+    <a
+      href="https://soundcloud.com/jacob-osterhout/"
+      target="_blank"
+    >
+      SoundCloud
+    </a>
+  </nav>
+</footer>

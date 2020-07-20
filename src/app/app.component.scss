@@ -1,0 +1,77 @@
+:host > .hero {
+  text-align: center;
+  color: white;
+  background: linear-gradient(lightblue, #247);
+  > header {
+    > h4 {
+      font-weight: normal;
+    }
+    padding: 2em;
+    img {
+      width: 7em;
+    }
+  }
+}
+
+:host > footer {
+  padding: 2em;
+  color: white;
+  background: linear-gradient(45deg, black, #247);
+
+  nav {
+    max-width: 800px;
+    margin: auto;
+    display: grid;
+    > a {
+      &:active,
+      &:hover {
+        transform: scale(1.05);
+      }
+      &:link {
+        color: white;
+      }
+      &:visited {
+        color: lightgoldenrodyellow;
+      }
+    }
+  }
+}
+
+:host > main {
+  max-width: 800px;
+  margin: 2em 1em;
+  @media (min-width: 800px) {
+    margin: 2em auto;
+  }
+  nav {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1em;
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    > a {
+      border-width: 0.2em;
+      border-style: inset;
+      transition: all 0.5s ease-in-out;
+      color: black;
+      &:active,
+      &:hover {
+        box-shadow: 0.2em 0.2em 0.4em 0 black;
+      }
+      &:link {
+        border-color: #1a0dab;
+      }
+      &:visited {
+        border-color: #609;
+      }
+      padding: 1em;
+
+      text-decoration: none;
+      > ul {
+        list-style: none;
+      }
+    }
+  }
+}
