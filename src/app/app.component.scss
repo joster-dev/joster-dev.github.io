@@ -1,7 +1,7 @@
 :host > .hero {
   text-align: center;
   color: white;
-  background: linear-gradient(lightblue, #247);
+  background: linear-gradient(#247000, #247);
   > header {
     > h4 {
       font-weight: normal;
@@ -16,7 +16,7 @@
 :host > footer {
   padding: 2em;
   color: white;
-  background: linear-gradient(45deg, black, #247);
+  background: linear-gradient(45deg, #247000, #247);
 
   nav {
     max-width: 800px;
