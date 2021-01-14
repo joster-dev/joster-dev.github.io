@@ -1,8 +1,11 @@
 {
   "name": "joster",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
-    "ghp-build": "ng build --prod --base-href=https://joster-dev.github.io/"
+    "pages": "npm run build-pages && npm run copy-brave1 && npm run copy-brave2",
+    "build-pages": "ng build --prod --base-href=https://joster-dev.github.io/",
+    "copy-brave1": "powershell Copy-Item \".\\.nojekyll\" -Destination=\".\\dist\"",
+    "copy-brave2": "powershell Copy-Item \".\\brave-rewards-verification.txt\" -Destination=\".\\dist\\.well-known\""
   },
   "private": true,
   "dependencies": {
@@ -16,8 +19,7 @@
     "@angular/router": "~10.1.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.3",
-    "@joster/form-control": "0.0.6"
+    "zone.js": "~0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1001.0",
