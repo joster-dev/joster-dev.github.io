@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { cards } from './cards.const';
 @Component({
@@ -8,4 +9,6 @@ import { cards } from './cards.const';
 export class AppComponent {
   cards = cards;
   searchTerm: string | null = null;
+
+  constructor() { }
 }

@@ -1,46 +1,88 @@
-<header>
-  <nav>
-
-  </nav>
+<header class="hero">
+  <div class="d-flex flex-justify-sb">
+    <div class="d-flex flex-align-c ml-2">
+      <icon
+        type="ring"
+        size="3em"
+        [fillOpacity]="0"
+        stroke="FFFFFF"
+      ></icon>
+      <h1 class="ml-2">
+        Jacob Osterhout
+      </h1>
+    </div>
+    <nav class="d-flex flex-align-c mr-2">
+      <a
+        href="#projects"
+        class="mr-2"
+      >
+        Projects
+      </a>
+      <a href="#donate">
+        Donate
+      </a>
+    </nav>
+  </div>
+  <h2>Web developer</h2>
+  <h3></h3>
 </header>
 <section class="hero">
   <header>
-    <h1>Oz</h1>
-    <h2>Web developer</h2>
+
+    <h1>More</h1>
+    <h2>Shiz</h2>
   </header>
 </section>
-<main>
-  <h2>
+<main class="mb-2">
+  <h2 id="projects">
     Projects
   </h2>
-  <fc-text
-    [(ngModel)]="searchTerm"
-    name="searchTerm"
-    label="Find a project 🔎"
-    placeholder="Type here to search..."
-  ></fc-text>
-  <nav>
+  <div class="d-flex flex-justify-sb flex-align-c">
+    <fc-text
+      [(ngModel)]="searchTerm"
+      name="searchTerm"
+      placeholder="Explore..."
+      class="flex-1 mr-2 mb-2"
+    >
+      Find a project
+    </fc-text>
+    <icon
+      type="search"
+      size="3em"
+      [fillOpacity]="0"
+      stroke="FFFFFF"
+    ></icon>
+  </div>
+  <div class="d-grid-2-col">
     <a
       *ngFor="let card of cards"
       [href]="card.link"
       target="_blank"
+      class="d-flex flex-b-50"
     >
-      <header>
-        {{card.title}}
-      </header>
-      <ul>
-        <li *ngFor="let tag of card.tags">
-          {{tag}}
-        </li>
-      </ul>
+      <div class="d-flex flex-align-c">
+        <icon-stack size="3em">
+          <icon
+            *ngFor="let iconType of card.icon"
+            [type]="iconType"
+            [fillOpacity]="0"
+            stroke="FFFFFF"
+          ></icon>
+        </icon-stack>
+        <h3 class="ml-2">
+          {{card.title}}
+        </h3>
+      </div>
+      <div class="card-type">{{card.type}}</div>
     </a>
-  </nav>
+  </div>
 </main>
 <footer>
-  <nav>
+  <nav class="ml-2">
     <a
       href="https://github.com/joster-dev/"
       target="_blank"
+      class="mr-2"
     >
       Github
     </a>

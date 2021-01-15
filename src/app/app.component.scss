@@ -1,39 +1,10 @@
-:host > .hero {
-  text-align: center;
-  color: white;
-  background: linear-gradient(#247000, #247);
-  > header {
-    > h4 {
-      font-weight: normal;
-    }
-    padding: 2em;
-    img {
-      width: 7em;
-    }
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
   }
-}
-
-:host > footer {
-  padding: 2em;
-  color: white;
-  background: linear-gradient(45deg, #247000, #247);
-
-  nav {
-    max-width: 800px;
-    margin: auto;
-    display: grid;
-    > a {
-      &:active,
-      &:hover {
-        transform: scale(1.05);
-      }
-      &:link {
-        color: white;
-      }
-      &:visited {
-        color: lightgoldenrodyellow;
-      }
-    }
+  50% {
+    background-position: 100% 50%;
   }
 }
 
