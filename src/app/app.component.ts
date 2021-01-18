@@ -11,4 +11,14 @@ export class AppComponent {
   searchTerm: string | null = null;
 
   constructor() { }
+
+  cardType(type: string) {
+    if (type === '🎮')
+      return 'Game';
+    if (type === '📦')
+      return 'Package';
+    if (type === '🛠️')
+      return 'Utility';
+    throw new Error('operation undefined');
+  }
 }

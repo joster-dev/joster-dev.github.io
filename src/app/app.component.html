@@ -1,48 +1,55 @@
-<header class="hero">
-  <div class="d-flex flex-justify-sb">
-    <div class="d-flex flex-align-c ml-2">
+<header>
+  <div class="d-flex flex-align-c flex-justify-sb ml mr">
+    <div class="d-flex flex-align-c">
       <icon
         type="ring"
-        size="3em"
+        size="4em"
+        class="mr"
         [fillOpacity]="0"
         stroke="FFFFFF"
       ></icon>
-      <h1 class="ml-2">
-        Jacob Osterhout
-      </h1>
+      <h1>Jacob Osterhout</h1>
     </div>
-    <nav class="d-flex flex-align-c mr-2">
+    <div>
       <a
-        href="#projects"
-        class="mr-2"
+        href="https://github.com/joster-dev/"
+        target="_blank"
       >
-        Projects
+        Github
       </a>
-      <a href="#donate">
-        Donate
-      </a>
-    </nav>
+    </div>
   </div>
-  <h2>Web developer</h2>
-  <h3></h3>
 </header>
-<section class="hero">
-  <header>
-
-    <h1>More</h1>
-    <h2>Shiz</h2>
-  </header>
-</section>
-<main class="mb-2">
-  <h2 id="projects">
-    Projects
-  </h2>
-  <div class="d-flex flex-justify-sb flex-align-c">
+<main>
+  <!-- <section class="hero">
+    I am a developer with a focus on creating angular web applications. Here are my application principles:
+    <ul>
+      <li>📱 Mobile Friendly</li>
+      <ul>
+        <li>should look good on phone, tablet, desktop, or 4k</li>
+      </ul>
+      <li>
+        👨‍💻 Progressive web features
+        <ul>
+          <li>should be installable</li>
+          <li>state should persist between user sessions</li>
+        </ul>
+      </li>
+      <li>
+        ♿ Accessible
+        <ul>
+          <li>should pass WCAG 2.2 AA</li>
+        </ul>
+      </li>
+    </ul>
+  </section> -->
+  <h2>Projects</h2>
+  <div class="d-flex flex-justify-sb flex-align-c mb">
     <fc-text
       [(ngModel)]="searchTerm"
       name="searchTerm"
       placeholder="Explore..."
-      class="flex-1 mr-2 mb-2"
+      class="flex-1 mr"
     >
       Find a project
     </fc-text>
@@ -53,15 +60,16 @@
       stroke="FFFFFF"
     ></icon>
   </div>
-  <div class="d-grid-2-col">
+  <div class="d-grid-2-col mb">
     <a
       *ngFor="let card of cards"
       [href]="card.link"
+      [title]="card.title + ' ' + cardType(card.type)"
       target="_blank"
-      class="d-flex flex-b-50"
+      class="d-flex flex-justify-sb flex-align-c p-rel"
     >
       <div class="d-flex flex-align-c">
-        <icon-stack size="3em">
+        <icon-stack size="4em">
           <icon
             *ngFor="let iconType of card.icon"
             [type]="iconType"
@@ -69,28 +77,33 @@
             stroke="FFFFFF"
           ></icon>
         </icon-stack>
-        <h3 class="ml-2">
-          {{card.title}}
-        </h3>
+        <div class="ml">
+          <h3 class="mb-0 mt-0">
+            {{card.title}}
+          </h3>
+          <div>
+            <small>{{cardType(card.type)}}</small>
+          </div>
+        </div>
+        <span class="card-type">
+          {{card.type}}
+        </span>
       </div>
-      <div class="card-type">{{card.type}}</div>
     </a>
   </div>
 </main>
-<footer>
-  <nav class="ml-2">
-    <a
-      href="https://github.com/joster-dev/"
-      target="_blank"
-      class="mr-2"
-    >
-      Github
-    </a>
-    <a
-      href="https://soundcloud.com/jacob-osterhout/"
-      target="_blank"
-    >
-      SoundCloud
-    </a>
-  </nav>
+<footer class="d-flex flex-justify-r mb">
+  <a
+    href="https://gab.com/JacobOsterhout"
+    target="_blank"
+    class="mr"
+  >
+    Gab
+  </a>
+  <a
+    href="https://soundcloud.com/jacob-osterhout/"
+    target="_blank"
+  >
+    SoundCloud
+  </a>
 </footer>

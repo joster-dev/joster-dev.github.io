@@ -2,40 +2,66 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background: linear-gradient(45deg, #000000, #002470) 0 0 / 150% 150%;
-  animation: 5s ease 0s infinite normal none running gradient;
+  background: linear-gradient(45deg, #000000, #002470) 0 0 / 500vh 500vh;
+  animation: 10s ease 0s infinite gradient;
   color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
+@keyframes gradient {
+  0%,
+  100% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+}
+
+.p-rel {
+  position: relative;
+}
+
+.d-ib {
+  display: inline-block;
+}
 .d-flex {
   display: flex;
 }
 .flex-1 {
   flex: 1;
 }
-
 .flex-justify-sb {
   justify-content: space-between;
 }
 .flex-align-c {
   align-items: center;
 }
+.flex-justify-r {
+  justify-content: flex-end;
+}
 .flex-wrap {
   flex-wrap: wrap;
 }
-.flex-b-50 {
-  flex-basis: 50%;
-  flex-shrink: 0;
-}
 
-.mr-2 {
+.mr {
   margin-right: 1em;
 }
-.ml-2 {
+.ml {
   margin-left: 1em;
 }
-.mb-2 {
+.mb {
   margin-bottom: 1em;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mt-0 {
+  margin-top: 0;
 }
 
 .d-grid-2-col {
@@ -48,7 +74,22 @@ a {
   text-decoration: none;
   color: inherit;
   padding: 1em;
-  border: 1px solid white;
+  border-width: 0.2em;
+  border-style: inset;
+  border-color: white;
   border-radius: 0.5em;
   display: inline-block;
+
+  transition: all 0.5s ease-in-out;
+  &:active,
+  &:hover {
+    border-style: outset;
+    box-shadow: 0.2em 0.2em 0.4em 0 black;
+  }
+  &:link {
+    border-color: #20a;
+  }
+  &:visited {
+    border-color: #609;
+  }
 }

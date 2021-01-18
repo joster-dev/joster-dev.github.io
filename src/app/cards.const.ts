@@ -16,7 +16,7 @@ export const cards: Card[] = [
   {
     title: 'Sort Lines',
     icon: ['ascend', 'descend'],
-    type: '🔧',
+    type: '🛠️',
     link: 'https://joster-dev.github.io/sort-lines/',
   },
   {
