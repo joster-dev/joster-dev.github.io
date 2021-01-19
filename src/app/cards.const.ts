@@ -22,19 +22,19 @@ export const cards: Card[] = [
   {
     title: 'Tic Tac Toe',
     icon: ['times'],
-    type: '🎮',
+    type: '🎲',
     link: 'https://joster-dev.github.io/tic-tac-toe/'
   },
   {
     title: 'Ogre',
     icon: ['ogre'],
-    type: '🎮',
+    type: '🎲',
     link: 'https://joster-dev.github.io/ogre/'
   },
   {
     title: 'Mine Sweeper',
     icon: ['bomb'],
-    type: '🎮',
+    type: '🎲',
     link: 'https://joster-dev.github.io/mine-sweeper/'
   }
 ];
