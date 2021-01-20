@@ -4,8 +4,8 @@
   "scripts": {
     "pages": "npm run build-pages && npm run copy-brave1 && npm run copy-brave2",
     "build-pages": "ng build --prod --base-href=https://joster-dev.github.io/",
-    "copy-brave1": "powershell Copy-Item \".\\.nojekyll\" -Destination=\".\\dist\"",
-    "copy-brave2": "powershell Copy-Item \".\\brave-rewards-verification.txt\" -Destination=\".\\dist\\.well-known\""
+    "copy-brave1": "powershell Copy-Item \".\\.nojekyll\" -Destination \".\\dist\"",
+    "copy-brave2": "powershell Copy-Item \".\\brave-rewards-verification.txt\" -Destination \".\\dist\\.well-known\""
   },
   "private": true,
   "dependencies": {
