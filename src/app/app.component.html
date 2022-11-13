@@ -1,0 +1,148 @@
+<header class="w-lg">
+  <div class="d-flex flex-align-c flex-justify-sb">
+    <div class="d-flex flex-align-c">
+      <button
+        type="button"
+        class="mr secret-button"
+        tabindex="-1"
+        (click)="onClickRing()"
+      >
+        <icon
+          type="ring"
+          size="4em"
+          [fillOpacity]="0"
+          stroke="FFFFFF"
+          [spin]="spinDirection"
+        ></icon>
+      </button>
+      <h1>Jacob Osterhout</h1>
+    </div>
+    <div class="ml">
+      <a
+        href="https://github.com/joster-dev/"
+        target="_blank"
+      >
+        Github
+      </a>
+    </div>
+  </div>
+</header>
+<main class="w-md">
+  <!-- <section class="hero">
+    <h2>A developer with discipline</h2>
+    <div>
+      Creating angular web applications
+    </div>
+    <div>
+      <small>Using the latest browser features</small>
+    </div>
+    <h3>Application principles</h3>
+    <ul>
+      <li>📱 Mobile</li>
+      <ul>
+        <li>tested on phone, tablet, desktop, and 4k</li>
+        <li>bundled and minified</li>
+      </ul>
+      <li>👨‍💻 PWA</li>
+      <ul>
+        <li>should be installable</li>
+        <li>state should persist between user sessions</li>
+      </ul>
+      <li>♿ Accessible</li>
+      <ul>
+        <li>should pass WCAG 2.2 AA</li>
+      </ul>
+    </ul>
+  </section> -->
+  <h2>Projects</h2>
+  <div class="d-flex flex-justify-sb flex-align-c mb">
+    <fc-text
+      [(ngModel)]="searchTerm"
+      name="searchTerm"
+      placeholder="Explore..."
+      class="flex-1 mr"
+    >
+      Find a project
+    </fc-text>
+    <icon
+      type="search"
+      size="3em"
+      [fillOpacity]="0"
+      stroke="FFFFFF"
+    ></icon>
+  </div>
+  <div class="d-grid-2-col mb">
+    <a
+      *ngFor="let card of filteredCards"
+      [href]="card.link"
+      [title]="card.title + ' ' + cardType(card.type)"
+      target="_blank"
+      class="d-flex flex-justify-sb flex-align-c p-rel"
+    >
+      <div class="d-flex flex-align-c">
+        <icon-stack size="4em">
+          <icon
+            *ngFor="let iconType of card.icon"
+            [type]="iconType"
+            [fillOpacity]="0"
+            stroke="FFFFFF"
+          ></icon>
+        </icon-stack>
+        <div class="ml">
+          <h3 class="mb-0 mt-0">
+            {{card.title}}
+          </h3>
+          <div>
+            <small>{{cardType(card.type)}}</small>
+          </div>
+        </div>
+        <span class="card-type">
+          {{card.type}}
+        </span>
+      </div>
+    </a>
+    <button
+      *ngIf="filteredCards.length === 0"
+      class="d-flex flex-justify-sb flex-align-c p-rel"
+      type="button"
+      (click)="searchTerm = null"
+    >
+      <div class="d-flex flex-align-c">
+        <icon-stack size="4em">
+          <icon
+            type="search"
+            [fillOpacity]="0"
+            stroke="FFFFFF"
+          ></icon>
+        </icon-stack>
+        <div class="ml">
+          <h3 class="mb-0 mt-0">
+            No results
+          </h3>
+          <div>
+            <small>Click to clear</small>
+          </div>
+        </div>
+        <span class="card-type">
+          🤷
+        </span>
+      </div>
+    </button>
+  </div>
+</main>
+<footer class="w-lg d-flex flex-justify-r mb pb">
+  <a
+    href="https://gab.com/JacobOsterhout"
+    target="_blank"
+    class="mr"
+  >
+    Gab
+  </a>
+  <a
+    href="https://soundcloud.com/jacob-osterhout/"
+    target="_blank"
+  >
+    SoundCloud
+  </a>
+</footer>
+<div id="background"></div>
