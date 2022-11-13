@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Card } from './card.interface';
 import { cards } from './cards.const';
+
 @Component({
   selector: 'jo-root',
   templateUrl: './app.component.html',
