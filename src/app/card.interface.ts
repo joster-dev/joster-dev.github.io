@@ -1,6 +1,8 @@
+import { icon } from "@joster-dev/icon";
+
 export interface Card {
   title: string;
-  icon: string[];
+  icon: icon[];
   type: string;
   link: string;
 }
