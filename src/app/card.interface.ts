@@ -1,4 +1,4 @@
-import { icon } from "@joster-dev/icon";
+import { icon } from '@joster-dev/icon';
 
 export interface Card {
   title: string;
