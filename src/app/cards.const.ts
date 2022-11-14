@@ -7,12 +7,12 @@ export const cards: Card[] = [
     type: '📦',
     link: 'https://joster-dev.github.io/icon/'
   },
-  {
-    title: 'Form Control',
-    icon: ['check'],
-    type: '📦',
-    link: 'https://joster-dev.github.io/form-control/',
-  },
+  // {
+  //   title: 'Form Control',
+  //   icon: ['check'],
+  //   type: '📦',
+  //   link: 'https://joster-dev.github.io/form-control/',
+  // },
   {
     title: 'Sort Lines',
     icon: ['ascend', 'descend'],

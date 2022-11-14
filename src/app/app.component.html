@@ -3,7 +3,7 @@
     <div class="d-flex flex-align-c">
       <button
         type="button"
-        class="mr secret-button"
+        class="margin-right secret-button"
         tabindex="-1"
         (click)="onClickRing()"
       >
@@ -11,19 +11,18 @@
           type="ring"
           size="4em"
           [fillOpacity]="0"
-          stroke="FFFFFF"
           [spin]="spinDirection"
         ></icon>
       </button>
       <h1>Jacob Osterhout</h1>
     </div>
-    <div class="ml">
-      <a
+    <div class="margin-left">
+      <jo-link
         href="https://github.com/joster-dev/"
         target="_blank"
       >
         Github
-      </a>
+      </jo-link>
     </div>
   </div>
 </header>
@@ -55,29 +54,29 @@
     </ul>
   </section> -->
   <h2>Projects</h2>
-  <div class="d-flex flex-justify-sb flex-align-c mb">
-    <fc-text
+  <div class="d-flex flex-justify-sb flex-align-c margin-bottom">
+    <jo-text
       [(ngModel)]="searchTerm"
+      [isGrow]="false"
       name="searchTerm"
       placeholder="Explore..."
-      class="flex-1 mr"
+      class="flex-1 margin-right"
     >
-      Find a project
-    </fc-text>
+      Search projects
+    </jo-text>
     <icon
       type="search"
       size="3em"
       [fillOpacity]="0"
-      stroke="FFFFFF"
     ></icon>
   </div>
-  <div class="d-grid-2-col mb">
-    <a
+  <div class="d-grid-2-col margin-bottom">
+    <jo-link
       *ngFor="let card of filteredCards"
       [href]="card.link"
       [title]="card.title + ' ' + cardType(card.type)"
       target="_blank"
-      class="d-flex flex-justify-sb flex-align-c p-rel"
+      class="d-flex flex-justify-sb flex-align-c"
     >
       <div class="d-flex flex-align-c">
         <icon-stack size="4em">
@@ -85,13 +84,10 @@
             *ngFor="let iconType of card.icon"
             [type]="iconType"
             [fillOpacity]="0"
-            stroke="FFFFFF"
           ></icon>
         </icon-stack>
-        <div class="ml">
-          <h3 class="mb-0 mt-0">
-            {{card.title}}
-          </h3>
+        <div class="margin-left">
+          <h3>{{card.title}}</h3>
           <div>
             <small>{{cardType(card.type)}}</small>
           </div>
@@ -100,49 +96,30 @@
           {{card.type}}
         </span>
       </div>
-    </a>
-    <button
+    </jo-link>
+    <jo-button
       *ngIf="filteredCards.length === 0"
-      class="d-flex flex-justify-sb flex-align-c p-rel"
-      type="button"
-      (click)="searchTerm = null"
+      class="d-flex flex-justify-sb flex-align-c"
+      (onClick)="searchTerm = null"
     >
       <div class="d-flex flex-align-c">
         <icon-stack size="4em">
           <icon
             type="search"
             [fillOpacity]="0"
-            stroke="FFFFFF"
           ></icon>
         </icon-stack>
-        <div class="ml">
-          <h3 class="mb-0 mt-0">
-            No results
-          </h3>
+        <div class="margin-left">
+          <h3>No results</h3>
           <div>
-            <small>Click to clear</small>
+            <small>Clear search</small>
           </div>
         </div>
         <span class="card-type">
           🤷
         </span>
       </div>
-    </button>
+    </jo-button>
   </div>
 </main>
-<footer class="w-lg d-flex flex-justify-r mb pb">
-  <a
-    href="https://gab.com/JacobOsterhout"
-    target="_blank"
-    class="mr"
-  >
-    Gab
-  </a>
-  <a
-    href="https://soundcloud.com/jacob-osterhout/"
-    target="_blank"
-  >
-    SoundCloud
-  </a>
-</footer>
 <div id="background"></div>
