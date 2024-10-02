@@ -1,15 +1,25 @@
 import { Component } from '@angular/core';
 import { Card } from './card.interface';
 import { cards } from './cards.const';
+import { IconModule } from '@joster-dev/icon';
+import { ChaosControlModule } from '@joster-dev/chaos-control';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'jo-root',
+  standalone: true,
+  imports: [
+    CommonModule,
+    FormsModule,
+    IconModule,
+    ChaosControlModule,
+  ],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrl: './app.component.scss'
 })
 export class AppComponent {
   searchTerm: string | null = null;
-  spinDirection: 'x' | 'y' | null = null;
 
   constructor() { }
 
@@ -20,15 +30,6 @@ export class AppComponent {
       || card.title.toLowerCase().includes(term)
       || card.type.toLowerCase().includes(term)
     );
-  }
-
-  onClickRing(): void {
-    if (this.spinDirection === null)
-      this.spinDirection = 'x';
-    else if (this.spinDirection === 'x')
-      this.spinDirection = 'y';
-    else
-      this.spinDirection = null;
   }
 
   cardType(type: string) {

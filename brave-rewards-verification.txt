@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: joster-dev.github.io
-Token: eb68765eb3c80a47da38af491a24c3b68ba2872102c8337ebab2384b95831504

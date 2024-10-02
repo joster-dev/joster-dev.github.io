@@ -1,66 +1,50 @@
-<header class="w-lg">
-  <div class="d-flex flex-align-c flex-justify-sb">
-    <div class="d-flex flex-align-c">
-      <button
-        type="button"
-        class="margin-right secret-button"
-        tabindex="-1"
-        (click)="onClickRing()"
-      >
-        <icon
-          type="ring"
-          size="4em"
-          [fillOpacity]="0"
-          [spin]="spinDirection"
-        ></icon>
-      </button>
-      <h1>Jacob Osterhout</h1>
-    </div>
-    <div class="margin-left">
-      <jo-link
-        href="https://github.com/joster-dev/"
-        target="_blank"
-      >
-        Github
-      </jo-link>
-    </div>
+<header class="w-lg d-flex gap-2 align-items-center justify-content-between">
+  <div class="d-flex gap-1 flex-column">
+    <h1>Jacob Osterhout</h1>
+    <small>Front-End Developer</small>
   </div>
+  <a
+    href="https://github.com/joster-dev/"
+    target="_blank"
+  >
+    Github
+  </a>
 </header>
-<main class="w-md">
+<main class="w-md d-flex flex-column gap-2">
   <!-- <section class="hero">
-    <h2>A developer with discipline</h2>
-    <div>
-      Creating angular web applications
-    </div>
-    <div>
-      <small>Using the latest browser features</small>
-    </div>
-    <h3>Application principles</h3>
-    <ul>
-      <li>📱 Mobile</li>
+      <h2>A developer with discipline</h2>
+      <div>
+        Creating angular web applications
+      </div>
+      <div>
+        <small>Using the latest browser features</small>
+      </div>
+      <h3>Application principles</h3>
       <ul>
-        <li>tested on phone, tablet, desktop, and 4k</li>
-        <li>bundled and minified</li>
+        <li>📱 Mobile</li>
+        <ul>
+          <li>tested on phone, tablet, desktop, and 4k</li>
+          <li>bundled and minified</li>
+        </ul>
+        <li>👨‍💻 PWA</li>
+        <ul>
+          <li>should be installable</li>
+          <li>state should persist between user sessions</li>
+        </ul>
+        <li>♿ Accessible</li>
+        <ul>
+          <li>should pass WCAG 2.2 AA</li>
+        </ul>
       </ul>
-      <li>👨‍💻 PWA</li>
-      <ul>
-        <li>should be installable</li>
-        <li>state should persist between user sessions</li>
-      </ul>
-      <li>♿ Accessible</li>
-      <ul>
-        <li>should pass WCAG 2.2 AA</li>
-      </ul>
-    </ul>
-  </section> -->
+    </section> -->
   <h2>Projects</h2>
-  <div class="d-flex flex-justify-sb flex-align-c margin-bottom">
+  <div class="d-flex gap-2 align-items-center">
     <jo-text
       [(ngModel)]="searchTerm"
       [isGrow]="false"
       name="searchTerm"
       placeholder="Explore..."
-      class="flex-1 margin-right"
+      class="flex-1"
     >
       Search projects
     </jo-text>
@@ -70,15 +54,15 @@
       [fillOpacity]="0"
     ></icon>
   </div>
-  <div class="d-grid-2-col margin-bottom">
-    <jo-link
+  <div class="d-grid-2-col gap-2">
+    <a
       *ngFor="let card of filteredCards"
       [href]="card.link"
       [title]="card.title + ' ' + cardType(card.type)"
       target="_blank"
-      class="d-flex flex-justify-sb flex-align-c"
+      class="d-flex justify-content-between align-items-center"
     >
-      <div class="d-flex flex-align-c">
+      <div class="d-flex gap-2 align-items-center">
         <icon-stack size="4em">
           <icon
             *ngFor="let iconType of card.icon"
@@ -86,7 +70,7 @@
             [fillOpacity]="0"
           ></icon>
         </icon-stack>
-        <div class="margin-left">
+        <div class="d-flex gap-1 flex-column">
           <h3>{{card.title}}</h3>
           <div>
             <small>{{cardType(card.type)}}</small>
@@ -96,20 +80,21 @@
           {{card.type}}
         </span>
       </div>
-    </jo-link>
-    <jo-button
+    </a>
+    <button
       *ngIf="filteredCards.length === 0"
-      class="d-flex flex-justify-sb flex-align-c"
-      (onClick)="searchTerm = null"
+      type="button"
+      class="d-flex justify-content-between align-items-center"
+      (click)="searchTerm = null"
     >
-      <div class="d-flex flex-align-c">
+      <div class="d-flex gap-2 align-items-center">
         <icon-stack size="4em">
           <icon
             type="search"
             [fillOpacity]="0"
           ></icon>
         </icon-stack>
-        <div class="margin-left">
+        <div class="d-flex gap-1 flex-column">
           <h3>No results</h3>
           <div>
             <small>Clear search</small>
@@ -119,7 +104,15 @@
           🤷
         </span>
       </div>
-    </jo-button>
+    </button>
   </div>
 </main>
+<footer class="w-lg d-flex gap-2 align-items-center justify-content-between">
+  <a href="https://github.com/sponsors/joster-dev/">
+    Sponsor
+  </a>
+  <div>
+    © Jacob Osterhout 2024
+  </div>
+</footer>
 <div id="background"></div>

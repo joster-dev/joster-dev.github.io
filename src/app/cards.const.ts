@@ -7,12 +7,12 @@ export const cards: Card[] = [
     type: '📦',
     link: 'https://joster-dev.github.io/icon/'
   },
-  // {
-  //   title: 'Form Control',
-  //   icon: ['check'],
-  //   type: '📦',
-  //   link: 'https://joster-dev.github.io/form-control/',
-  // },
+  {
+    title: 'Chaos Control',
+    icon: ['check'],
+    type: '📦',
+    link: 'https://joster-dev.github.io/chaos-control/',
+  },
   {
     title: 'Sort Lines',
     icon: ['ascend', 'descend'],
@@ -36,5 +36,11 @@ export const cards: Card[] = [
     icon: ['bomb'],
     type: '🎲',
     link: 'https://joster-dev.github.io/mine-sweeper/'
+  },
+  {
+    title: 'Plato Compare',
+    icon: ['amphora'],
+    type: '🛠️',
+    link: 'https://joster-dev.github.io/plato-compare/'
   }
 ];
