@@ -1,20 +1,8 @@
-.w-md {
-  max-width: 700px;
-  padding: 0 1em;
-  margin: 0 auto;
-}
-
-.w-lg {
-  max-width: 850px;
-  padding: 2em 1em;
-  margin: 0 auto;
-}
-
 .card-type {
   font-size: 8em;
   position: absolute;
   right: 0;
-  opacity: 0.125;
+  opacity: 0.15;
 }
 
 .d-grid-2-col {
@@ -25,17 +13,6 @@
     grid-template-columns: 1fr;
     justify-content: center;
   }
-}
-
-#background {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-  background: linear-gradient(-45deg, #001030, #000000) 0 0 / 150% 150%;
-  animation: 10s ease 0s infinite gradient;
 }
 
 a,
@@ -52,22 +29,5 @@ button {
   &:active,
   &:focus {
     opacity: 1;
-  }
-}
-
-h3 {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-@keyframes gradient {
-
-  0%,
-  100% {
-    background-position: 0% 0%;
-  }
-
-  50% {
-    background-position: 50% 50%;
   }
 }

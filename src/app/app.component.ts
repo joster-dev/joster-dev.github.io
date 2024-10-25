@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'jo-root',
+  selector: '[jo-root]',
   standalone: true,
   imports: [
     CommonModule,
